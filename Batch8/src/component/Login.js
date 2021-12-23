@@ -1,65 +1,33 @@
 import React, { useState } from "react";
 import img from "../images/Images1.png";
-//import img from "../asset/css/Images.png"
 
-function SignUp() {
-  const [signUp, setSignUp] = useState({
-    name: "",
-    email: "",
+function Login() {
+  const [login, setLogin] = useState({
     phone: "",
-    shopname: "",
     password: "",
   });
 
-  const signUpData = (e) => {
-    setSignUp({ ...signUp, [e.target.name]: e.target.value });
-    console.log(signUp);
+  const loginData = (e) => {
+    setLogin({ ...login, [e.target.name]: e.target.value });
+    console.log(login);
   };
 
-  const submitData = (e) => {
-    // console.log("submit the button==>>>",signUp);
-  };
-
-  // useEffect(() => {
-  //     // storing input name
-  //     localStorage.setItem("name", JSON.stringify());
-  //   }, [r]);
+  const submitData = (e) => {};
 
   return (
     <div className="container">
       <div className="row">
         <div className="col mt-2 pt-5 ">
           <h2 style={{ color: "#575700", textShadow: "0 0 1px #FF0000" }}>
-            Create VMall Tenant Account
+            Login to VMall Tenant Account
           </h2>
           <h5
-            className="mb-4 mt-4"
+            className="mb-4 mt-5"
             style={{ color: "purple", textDecoration: "underline" }}
           >
-            Sign Up
+            Log in
           </h5>
           <form>
-            <div className="mb-4">
-              <input
-                type="text"
-                className="form-control"
-                name="name"
-                onChange={signUpData}
-                placeholder="Enter Full Name"
-                aria-describedby="emailHelp"
-                style={{ backgroundColor: "whitesmoke" }}
-              />
-            </div>
-            <div className="mb-4 ">
-              <input
-                type="email"
-                className="form-control"
-                name="email"
-                onChange={signUpData}
-                placeholder="Enter Email ID"
-                style={{ backgroundColor: "whitesmoke" }}
-              />
-            </div>
             <div className="mb-4">
               <input
                 type="number"
@@ -67,23 +35,14 @@ function SignUp() {
                 className="form-control"
                 name="phone"
                 name="phone"
-                onChange={signUpData}
+                onChange={loginData}
                 placeholder="Enter Phone Number"
                 maxlength={10}
                 required
                 style={{ backgroundColor: "whitesmoke" }}
               />
             </div>
-            <div className="mb-4">
-              <input
-                type="text"
-                className="form-control"
-                name="shopname"
-                onChange={signUpData}
-                placeholder="Enter Shop Name"
-                style={{ backgroundColor: "whitesmoke" }}
-              />
-            </div>
+
             <div className="mb-4">
               <input
                 type="password"
@@ -91,7 +50,7 @@ function SignUp() {
                 minlength="8"
                 required
                 name="password"
-                onChange={signUpData}
+                onChange={loginData}
                 placeholder="Enter Password"
                 style={{ backgroundColor: "whitesmoke" }}
               />
@@ -108,7 +67,7 @@ function SignUp() {
                 }}
                 style={{ boxShadow: "5px 5px 5px grey" }}
               >
-                Signup
+                Log in
               </button>
             </div>
 
@@ -123,7 +82,7 @@ function SignUp() {
                 type="button"
                 style={{ boxShadow: "5px 5px 5px grey" }}
               >
-                Signup Via Google
+                Login Via Google
               </button>
             </div>
             <div className="d-grid gap-2 mt-4 ">
@@ -132,7 +91,7 @@ function SignUp() {
                 type="button"
                 style={{ boxShadow: "5px 5px 5px grey", color: "white" }}
               >
-                Signup Via Facebook
+                Login Via Facebook
               </button>
             </div>
           </form>
@@ -150,4 +109,4 @@ function SignUp() {
   );
 }
 
-export default SignUp;
+export default Login;
